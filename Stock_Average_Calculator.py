@@ -68,8 +68,10 @@ if st.button("Calculate Required Quantity"):
         required_qty = (target_avg * existing_qty - invested_amount) / (current_price - target_avg)
 
         if required_qty > 0:
+            required_amount = int(required_qty) * current_price
             st.success("Calculation Result")
             st.write(f"**Quantity Required to Buy:** {int(required_qty)}")
+            st.write(f"**Total Amount Required:** ₹ {required_amount:,.2f}")
         else:
             st.warning("Target average is not achievable at this price")
     else:
